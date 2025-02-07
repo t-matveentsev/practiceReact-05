@@ -1,15 +1,18 @@
 import axios from "axios";
 
-export const fetchRequest = async (query, page) => {
-  const response = await axios.get(
-    `https://hn.algolia.com/api/v1/search?query=${query}&page=${page}`
-  );
-  return response.data;
+axios.defaults.baseURL = "https://dummyjson.com";
+
+export const fetchUsers = async () => {
+  const { data } = await axios.get("users");
+  return data.users;
 };
 
-export const fetchRequestById = async () => {
-  const response = await axios.get(
-    "https://hn.algolia.com/api/v1/search?query=react"
-  );
-  return response.data;
+export const fetchUserById = async (userId) => {
+  const { data } = await axios.get(`users/${userId}`);
+  return data;
+};
+
+export const fetchPostsByUserId = async (userId) => {
+  const { data } = await axios.get(`/posts/user/${userId}`);
+  return data.posts;
 };
