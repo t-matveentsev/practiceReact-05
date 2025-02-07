@@ -1,15 +1,23 @@
-.header {
+.link {
+  color: white;
+  font-size: 26px;
+  text-decoration: none;
+}
+.nav {
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
+  color: white;
+}
+.active {
+  color: teal;
+  text-decoration: underline;
+}
+
+header {
+  display: flex;
   align-items: center;
-  width: 100vw;
-  height: 100px;
+  justify-content: space-between;
   background-color: black;
   color: white;
-
-  & button {
-    color: black;
-    padding: 6px 5px;
-    border-radius: 5px;
-  }
+  height: 100px;
 }

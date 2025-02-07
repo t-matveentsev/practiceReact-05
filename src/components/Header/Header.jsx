@@ -1,19 +1,28 @@
-import { useContext } from "react";
+import clsx from "clsx";
+import { NavLink } from "react-router-dom";
 import s from "./Header.module.css";
-import { authContext } from "../../providers/AuthProvider/AuthProvider";
-import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
-
+const buildLinkClass = ({ isActive }) => {
+  return clsx(s.link, isActive && s.active);
+};
 const Header = () => {
-  const { user, logout } = useContext(authContext);
-  const { toggleTheme, theme } = useContext(themeContext);
   return (
-    <header className={s.header}>
-      <h2>Hooks | useMemo, useRef, useContext</h2>
-      <h2>Welcome, {user}</h2>
-      <button onClick={toggleTheme}>{theme}</button>
-      <button onClick={logout}>Logout</button>
+    <header>
+      <h2>Router</h2>
+      <nav className={s.nav}>
+        <NavLink
+          className={({ isActive }) => clsx(s.link, isActive && s.active)}
+          to="/"
+        >
+          Home
+        </NavLink>
+        <NavLink className={buildLinkClass} to="/about">
+          About
+        </NavLink>
+        <NavLink className={buildLinkClass} to="/users">
+          Users
+        </NavLink>
+      </nav>
     </header>
   );
 };
-
 export default Header;
