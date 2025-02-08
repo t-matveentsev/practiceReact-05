@@ -32,6 +32,7 @@ const UserDetails = () => {
   return (
     <div>
       <Link to={goBackUrl.current}>Go Back</Link>
+      <button onClick={() => navigate(-1)}>Back -1</button>
       UserDetails #{userId}
       <img src={user.image} />
       <h2>
