@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
+import s from "./About.module.css";
 
 const About = () => {
   return (
@@ -10,7 +11,7 @@ const About = () => {
         dolorum, molestias consectetur qui! Explicabo delectus voluptate ex fuga
         quos officia odit at.
       </p>
-      <nav className="nav">
+      <nav className={s.nav}>
         <NavLink to="aim">Aim</NavLink>
         <NavLink to="company">Company</NavLink>
         <NavLink to="team">Team</NavLink>

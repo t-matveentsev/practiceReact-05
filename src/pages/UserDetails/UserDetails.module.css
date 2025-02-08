@@ -1,6 +1,3 @@
 .navDetails {
   font-size: 22px;
-  & :hover {
-    color: black;
-  }
 }
